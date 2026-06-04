@@ -1,7 +1,7 @@
-NAME = analyze
+NAME = analyze.exe
 
 $(NAME): analyze.o
-	ld $^ -o $@
+	link.exe $^ /OUT:$@ /ENTRY:_start /SUBSYSTEM:console
 analyze.o: start.s
-	nasm -f elf64 start.s -o $@
+	nasm -f win64 start.s -o $@
 
